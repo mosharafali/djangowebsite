@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+
+{% block main-content %} 
+<!--Footer-->
+<footer class="footer_wrapper" id="contact">
+  
+  <div class="container">
+    <section class="page_section contact" id="contact">
+      <div class="contact_section">
+        <h2>Titanic Survival Predictor</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 wow fadeInLeft">
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+              <form action="result">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Passenger Class (1, 2 or 3)" required type="text" name="pclass">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Sex (0 for Male, 1 for Female)" required type="text" name="sex">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Age" required type="text" name="age">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="No. of Sibling(s) or Spouse(s)" required type="text" name="sibsp">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Parch" type="text" required name="parch">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Ticket Fare" required type="text" name="fare">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Embark C (1 if applies)" required type="text" name="embC">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Embark Q (1 if applies)" required type="text" name="embQ">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Embark S (1 if applies)" required type="text" name="embS">
+    </div>
+    <br>
+
+<center>
+    <input class="btn btn-primary" type="submit" value='Predict'>
+    </center>
+          </form>
+
+          <div class="container w-25">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <p id="para_alert"></p>
+          </div>
+      
+
+
+       
+        </div>
+  
+     
+      </div>
+      <div class="row">
+        <div class="col-lg-4 wow fadeInLeft">	
+		
+       		  
+			  
+          
+         
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+         	  
+        
+	
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</footer>
+
+<!--Footer--> 
+  
+  {% endblock main-content %} 

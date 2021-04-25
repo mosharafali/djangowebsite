@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+
+{% block main-content %} 
+<!--Footer-->
+<footer class="footer_wrapper" id="contact">
+  
+  <div class="container">
+    <section class="page_section contact" id="contact">
+      <div class="contact_section">
+        <h2>Online Video Downloader</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 wow fadeInLeft">
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+          <form action="all_download_video/" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <div class="row">
+                <div class="col-lg-12">
+              <label for="exampleInputEmail1">Download YouTube and Facebook video</label>    
+              <input type="text" class="form-control" style="color: white;" id="url_name" aria-describedby="emailHelp" placeholder="Paste your video link here" name="url">
+              <p> By using our service you accept our <a href="terms.html" class="">Terms of Service</a> and <a href="privacy.html" class="">Privacy Policy</a> </p>
+                </div>
+              </div>
+              <br>
+              <center>
+            <button type="submit" class="btn btn-primary">Download</button>
+            </center>
+          </form>
+
+          <div class="container w-25">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <p id="para_alert"></p>
+          </div>
+      
+
+
+       
+        </div>
+  
+     
+      </div>
+      <div class="row">
+        <div class="col-lg-4 wow fadeInLeft">	
+		
+       		  
+			  
+          
+         
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+         	  
+        
+	
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</footer>
+
+<!--Footer-->
+<footer class="footer_wrapper" id="contact">
+  
+  <div class="container">
+    <section class="page_section contact" id="contact">
+      <div class="contact_section">
+        <h2>Ask Anything</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 wow fadeInLeft">
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+          <form action="/bot_search/" method="GET">
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <div class="row">
+                <div class="col-lg-12">
+              <input type="text" class="form-control" style="color: white;" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type your ask" name="query">
+              <p> By using our service you accept our <a href="terms.html" class="">Terms of Service</a> and <a href="privacy.html" class="">Privacy Policy</a> </p>
+                </div>
+              </div>
+              <br>
+            <center>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </center>
+          </form>
+
+          {% if ans %}
+
+          <h4 style="color: darkgray; padding-top: 2%;">Search Result for {{query}} :</h4>
+          <h4 style="padding-top: 2%;">{{ans}}</h4>
+    
+          {% endif %}
+       
+        </div>
+  
+     
+      </div>
+      <div class="row">
+        <div class="col-lg-4 wow fadeInLeft">	
+		
+       		  
+			  
+          
+         
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+         	  
+        
+	
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</footer>
+
+<!--Footer-->
+<footer class="footer_wrapper" id="contact">
+  
+  <div class="container">
+    <section class="page_section contact" id="contact">
+      <div class="contact_section">
+        <h2>Titanic Survival Predictor</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 wow fadeInLeft">
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+              <form action="result">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Passenger Class (1, 2 or 3)" required type="text" name="pclass">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Sex (0 for Male, 1 for Female)" required type="text" name="sex">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Age" required type="text" name="age">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="No. of Sibling(s) or Spouse(s)" required type="text" name="sibsp">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Parch" type="text" required name="parch">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Ticket Fare" required type="text" name="fare">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Embark C (1 if applies)" required type="text" name="embC">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Embark Q (1 if applies)" required type="text" name="embQ">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" style="color: white;" placeholder="Embark S (1 if applies)" required type="text" name="embS">
+    </div>
+    <br>
+
+<center>
+    <input class="btn btn-primary" type="submit" value='Predict'>
+    </center>
+          </form>
+
+          <div class="container w-25">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <p id="para_alert"></p>
+          </div>
+      
+
+
+       
+        </div>
+  
+     
+      </div>
+      <div class="row">
+        <div class="col-lg-4 wow fadeInLeft">	
+		
+       		  
+			  
+          
+         
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+         	  
+        
+	
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</footer>
+
+<!--Footer--> 
+{% endblock main-content %}
+
+

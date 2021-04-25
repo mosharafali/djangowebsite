@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/external/" method="post">
+        {% csrf_token %}
+        Input Text:
+        <input type="text" name="param" required><br><br>
+        {{data_external}}<br><br>
+        {{data1}}
+        <br><br>
+        <input type="submit" value="Execute External Python Script">
+      </form>
+    
+</body>
+</html>

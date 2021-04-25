@@ -1,0 +1,2 @@
+[0102/231531.605:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0103/002825.330:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\DELL\AppData\Local\CCleaner Browser\User Data\Crashpad\attachments\38ac4b18-eabe-42e0-a55b-32bb6985eb2c: The system cannot find the path specified. (0x3)
